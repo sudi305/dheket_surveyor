@@ -130,19 +130,29 @@ public class MainActivity extends AppCompatActivity
         //actionBar.setHomeAsUpIndicator(R.drawable.logo);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setTitle("Dheket");
+        actionBar.setSubtitle("For Surveyor");
+
 //        actionBar.setSubtitle(Html.fromHtml("<font color='#FFBF00'>Location in Radius " + formatter.format(radius) + " Km</font>"));
 
         final Animation animTranslate = AnimationUtils.loadAnimation(this, R.anim.anim_translate_y_2persen);
 
+        fabYorigin = screenProperties("h") - (int)(72 * (getResources().getDisplayMetrics().density) + 0.5f);
+        fabYnew = screenProperties("h") - (int)(150 * (getResources().getDisplayMetrics().density) + 0.5f);
+
         fab = (FloatingActionButton) findViewById(R.id.fab);
+        //fab.setY(fabYnew);
         fab.setAnimation(animTranslate);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                Intent addLoc = new Intent(MainActivity.this, FormAddNewLocationActivity.class);
+                startActivity(addLoc);
+                finish();
             }
         });
+        //fab.setY(fabYorigin);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -181,9 +191,6 @@ public class MainActivity extends AppCompatActivity
         placeLayout.setVisibility(View.GONE);
         but_minmax = (ViewGroup)findViewById(R.id.button_minmax);
         but_minmax.setVisibility(View.GONE);
-
-        fabYorigin = screenProperties("h") - (int)(72 * (getResources().getDisplayMetrics().density) + 0.5f);
-        fabYnew = screenProperties("h") - (int)(150 * (getResources().getDisplayMetrics().density) + 0.5f);
 
         placeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -444,6 +451,7 @@ public class MainActivity extends AppCompatActivity
                 mMapView.setRotationAngle(0);
                 // Also reset the compass angle.
                 mCompass.setRotationAngle(0);
+                fab.setY(fabYorigin);
             }
         }
     };
@@ -583,6 +591,9 @@ public class MainActivity extends AppCompatActivity
         if (mLDM != null) {
             mLDM.pause();
         }
+        //fab.setY(fabYorigin);
+        /*but_minmax.setVisibility(View.GONE);
+        placeLayout.setVisibility(View.GONE);*/
     }
 
     @Override
@@ -594,9 +605,8 @@ public class MainActivity extends AppCompatActivity
         }
         setupLocator();
         setupLocationListener();
-        fab.setY(fabYorigin);
-        but_minmax.setVisibility(View.GONE);
-        placeLayout.setVisibility(View.GONE);
+        /*but_minmax.setVisibility(View.GONE);
+        placeLayout.setVisibility(View.GONE);*/
     }
 
     @Override
@@ -709,6 +719,7 @@ public class MainActivity extends AppCompatActivity
             placeLayout.setVisibility(View.GONE);
             imageButton_maximaze.setVisibility(View.GONE);
             imageButton_minimaze.setVisibility(View.GONE);
+            fab.setY(fabYorigin);
         }
     }
 

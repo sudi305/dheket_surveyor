@@ -228,6 +228,7 @@ public class TabFragDetLoc  extends Fragment implements LocationListener {
         paket.putDouble("latitude",latitude);
         paket.putDouble("longitude",longitude);
         paket.putString("kategori",kategori);
+        paket.putString("loc_name",temp_loc_name);
         map.putExtras(paket);
         startActivity(map);
         getActivity().finish();

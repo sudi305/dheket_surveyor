@@ -110,9 +110,6 @@ public class SingleMapLocationActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         //actionBar.setHomeAsUpIndicator(R.drawable.logo);
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setTitle("Dheket");
-//        actionBar.setSubtitle(Html.fromHtml("<font color='#FFBF00'>Location in Radius " + formatter.format(radius) + " Km</font>"));
-        actionBar.setSubtitle(Html.fromHtml("<font color='#FFBF00'>Location in Radius " + formatNumber.changeFormatNumber(radius) + " Km</font>"));
 
         FacebookSdk.sdkInitialize(getApplicationContext());
 
@@ -128,6 +125,11 @@ public class SingleMapLocationActivity extends AppCompatActivity {
         latitude = paket.getDouble("latitude");
         longitude = paket.getDouble("longitude");
         kategori = paket.getString("kategori");
+        temp_loc_name = paket.getString("loc_name");
+
+        actionBar.setTitle(temp_loc_name);
+//        actionBar.setSubtitle(Html.fromHtml("<font color='#FFBF00'>Location in Radius " + formatter.format(radius) + " Km</font>"));
+        actionBar.setSubtitle(Html.fromHtml("<font color='#FFFFFF'>Category "+kategori+"</font>"));
 
         imageView_pic = (ImageView)findViewById(R.id.imageView_tfm_pic_single);
         imageView_pic_back = (ImageView)findViewById(R.id.imageView_tfm_pic_back_single);

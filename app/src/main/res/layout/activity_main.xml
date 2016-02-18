@@ -86,7 +86,7 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#cde2ea"
+                android:background="#5991ff"
                 android:id="@+id/detail_loc_single"
                 android:padding="5dp"
                 android:visibility="gone">
@@ -96,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:background="#eeeeee">
+                    android:background="@drawable/corner_round_all">
 
                     <FrameLayout
                         android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
                             android:layout_height="70dp"
                             android:id="@+id/imageView_tfm_pic_back_single"
                             android:layout_gravity="center"
-                            android:src="#5767be"
+                            android:src="@drawable/corner_round_blue"
                             android:layout_margin="3px" />
 
                         <ImageView

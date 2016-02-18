@@ -3,6 +3,8 @@ package com.bgs.dheket.surveyor;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -49,13 +51,15 @@ public class DetailLocationActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         //actionBar.setHomeAsUpIndicator(R.drawable.logo);
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setTitle(""+loc_name);
+        actionBar.setTitle("" + loc_name);
 
         /*actionBar.setSubtitle(Html.fromHtml("<font color='#FFBF00'>Category " + paket.getString("kategori") + " in Radius "
                 + formatter.format(paket.getDouble("radius")) + " Km</font>"));*/
-        actionBar.setSubtitle(Html.fromHtml("<font color='#FFBF00'> "+loc_address+" </font>"));
+        actionBar.setSubtitle(Html.fromHtml("<font color='#ffffff'> " + loc_address + " </font>"));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#5991ff")));
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout_loc_detail);
+        tabLayout.setTabTextColors(Color.parseColor("#5991ff"),Color.parseColor("#194CB3"));
         tabLayout.addTab(tabLayout.newTab().setText("Detail"));
         //tabLayout.addTab(tabLayout.newTab().setText("Chat"));
         if (loc_promo==1)tabLayout.addTab(tabLayout.newTab().setText("Promo"));

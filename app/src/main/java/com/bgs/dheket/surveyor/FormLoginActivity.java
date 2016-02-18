@@ -1,6 +1,8 @@
 package com.bgs.dheket.surveyor;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -40,6 +42,7 @@ public class FormLoginActivity extends AppCompatActivity {
         //actionBar.setHomeAsUpIndicator(R.drawable.logo);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setTitle("Login to Dheket");
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#5991ff")));
 
         callbackManager = CallbackManager.Factory.create();
         login = (LoginButton)findViewById(R.id.login_button);

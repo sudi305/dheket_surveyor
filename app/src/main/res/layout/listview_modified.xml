@@ -11,7 +11,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/corner_round_all">
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -22,8 +23,9 @@
                 android:layout_height="70dp"
                 android:id="@+id/imageView_backPic"
                 android:layout_gravity="center"
-                android:src="#5767be"
-                android:layout_margin="3px" />
+                android:src="#5991ff"
+                android:layout_margin="3px"
+                android:background="@drawable/corner_round_blue" />
 
             <ImageView
                 android:layout_width="70dp"
