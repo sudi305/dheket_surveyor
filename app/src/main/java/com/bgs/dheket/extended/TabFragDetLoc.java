@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -23,6 +26,7 @@ import com.bgs.dheket.common.Utility;
 import com.bgs.dheket.networkAndSensor.HttpGetOrPost;
 import com.bgs.dheket.surveyor.R;
 import com.bgs.dheket.surveyor.SingleMapLocationActivity;
+import com.esri.android.map.LocationDisplayManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,7 +83,7 @@ public class TabFragDetLoc  extends Fragment implements LocationListener {
             @Override
             public void onClick(View v) {
                 imageButton_share.setAnimation(animButtonPress);
-                shareIt();
+
             }
         });
 
@@ -90,8 +94,28 @@ public class TabFragDetLoc  extends Fragment implements LocationListener {
                 gotoMap();
             }
         });
-
+        setHasOptionsMenu(true);
         return rootView;
+    }
+
+    public void onCreateOptionsMenu(Menu menu,MenuInflater inflater ) {
+        inflater.inflate(R.menu.menu_detail_loc, menu);
+        super.onCreateOptionsMenu(menu,inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.goto_map:
+                gotoMap();
+                return true;
+            case R.id.goto_share:
+                shareIt();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     public void getDataFromServer() {
@@ -216,7 +240,7 @@ public class TabFragDetLoc  extends Fragment implements LocationListener {
         sharingIntent.setType("text/plain");
         sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Dheket");
         sharingIntent.putExtra(Intent.EXTRA_TEXT, "Nearby location https://dheket.esy.es/ ");
-        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        startActivity(Intent.createChooser(sharingIntent, "Share Detail Location Via"));
     }
 
     public void gotoMap() {

@@ -21,4 +21,6 @@
     <string name="startup_caption">What do you need?</string>
 
     <string name="menu_locate">Locate</string>
+
+    <string name="prompt">Select Category</string>
 </resources>

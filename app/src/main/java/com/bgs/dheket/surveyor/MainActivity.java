@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity
         mMapView = (MapView)findViewById(R.id.map_single);
         mMapView.setOnStatusChangedListener(statusChangedListener);
         mMapView.setOnSingleTapListener(mapTapCallback);
-        mMapView.setOnLongPressListener(mapLongPress);
+       /* mMapView.setOnLongPressListener(mapLongPress);*/
 /*        paket = getIntent().getExtras();
         loc_id = paket.getInt("id_loc");
         cat_id = paket.getInt("cat_id");

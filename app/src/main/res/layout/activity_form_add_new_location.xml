@@ -227,7 +227,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:id="@+id/textView_anl_map_latlong"
-                        android:textColor="#ffffff"
+                        android:textColor="#ff0000"
                         android:textStyle="bold"
                         android:layout_gravity="center_horizontal"
                         android:layout_alignParentBottom="true"
@@ -237,15 +237,24 @@
                         android:layout_alignParentStart="true"
                         android:layout_margin="2dp" />
 
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/imageView20"
+                        android:background="#88000000"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+
                     <Button
                         style="?android:attr/buttonStyleSmall"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:id="@+id/button"
+                        android:id="@+id/button_centerLoc"
                         android:background="@drawable/ic_action_location_searching"
                         android:layout_alignParentTop="true"
-                        android:layout_alignRight="@+id/textView_anl_map_latlong"
-                        android:layout_alignEnd="@+id/textView_anl_map_latlong" />
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
                 </RelativeLayout>
 
                 <TextView
@@ -347,7 +356,9 @@
                         android:id="@+id/spinner_anl_category"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:drawSelectorOnTop="false"
+                        android:prompt="@string/prompt"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -383,7 +394,8 @@
                     android:hint="Sub Category / Tags"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginBottom="5dp" />
+                    android:layout_marginBottom="5dp"
+                    android:focusableInTouchMode="false" />
             </LinearLayout>
 
         </LinearLayout>
@@ -447,7 +459,9 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
-                    android:inputType="textLongMessage" />
+                    android:inputType="textLongMessage|textMultiLine"
+                    android:focusableInTouchMode="false"
+                    android:singleLine="false" />
 
             </LinearLayout>
 
@@ -458,7 +472,8 @@
                 android:src="@drawable/logo"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp"
-                android:background="@drawable/corner_round_blue" />
+                android:background="@drawable/corner_round_blue"
+                android:visibility="gone" />
 
         </LinearLayout>
 
@@ -512,7 +527,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:id="@+id/editText2"
+                    android:id="@+id/editText_anl_loc_description"
                     android:hint="Description"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
