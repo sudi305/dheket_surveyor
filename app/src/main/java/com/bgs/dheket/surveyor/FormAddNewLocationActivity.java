@@ -118,7 +118,7 @@ public class FormAddNewLocationActivity extends AppCompatActivity {
     int []temp_id_cat = new int[1];
 
     // Response
-    String responseServer;
+    String responseServer="";
     String loc_name,loc_address,loc_phone,loc_tag,loc_photo,loc_desc;
     double loc_lat,loc_lng;
     int loc_cat;
@@ -345,8 +345,14 @@ public class FormAddNewLocationActivity extends AppCompatActivity {
             loc_tag = editText_loc_subCat.getText().toString();
             loc_photo = editText_loc_photoUrl.getText().toString();
             loc_desc = editText_loc_description.getText().toString();
-            loc_lat = Double.parseDouble(editText_loc_lat.getText().toString());
-            loc_lng = Double.parseDouble(editText_loc_lng.getText().toString());
+            if (editText_loc_lat.getText().toString().isEmpty())
+                loc_lat = 0.0;
+            else
+                loc_lat = Double.parseDouble(editText_loc_lat.getText().toString());
+            if (editText_loc_lng.getText().toString().isEmpty())
+                loc_lng = 0.0;
+            else
+                loc_lng = Double.parseDouble(editText_loc_lng.getText().toString());
             loc_cat = temp_id_cat[0];
             loc_userCreatedId = "0";
 
@@ -748,8 +754,7 @@ public class FormAddNewLocationActivity extends AppCompatActivity {
                 InputStream inputStream = response.getEntity().getContent();
                 InputStreamToStringExample str = new InputStreamToStringExample();
                 responseServer = str.getStringFromInputStream(inputStream);
-                Log.e("response", "response -----" + responseServer);
-
+                Log.e("response", "response ----- " + responseServer + "|");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -760,7 +765,14 @@ public class FormAddNewLocationActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            Toast.makeText(getApplicationContext(),"DATA berhasil ditambahkan",Toast.LENGTH_SHORT).show();
+            if (responseServer!=null && responseServer.equalsIgnoreCase("1")) {
+                Toast.makeText(getApplicationContext(),"Success!",Toast.LENGTH_SHORT).show();
+                responseServer="";
+            } else {
+                if (responseServer.equalsIgnoreCase("") || responseServer.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Ops, Error! Please Try Again!",Toast.LENGTH_SHORT).show();
+                }
+            }
         }
     }
 
@@ -769,7 +781,7 @@ public class FormAddNewLocationActivity extends AppCompatActivity {
         public static void main(String[] args) throws IOException {
 
             // intilize an InputStream
-            InputStream is = new ByteArrayInputStream("file content..blah blah".getBytes());
+            InputStream is = new ByteArrayInputStream("file content is process".getBytes());
 
             String result = getStringFromInputStream(is);
 
