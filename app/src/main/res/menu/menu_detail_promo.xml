@@ -6,6 +6,6 @@
         android:id="@+id/goto_share"
         android:icon="@drawable/ic_action_share_white"
         app:showAsAction="always"
-        android:title="Go To Map"/>
+        android:title="Share"/>
     
 </menu>
