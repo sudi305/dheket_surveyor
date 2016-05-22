@@ -110,7 +110,7 @@ public class FormAddNewLocationActivity extends AppCompatActivity {
     Uri _uri;
     //CallWebPageTask task;
 
-    String url = "http://dheket.esy.es/getAllCategory.php";
+    String url = "http://dheket.co.id/index.php/getallcategory";
     private JSONObject jObject;
     String []nama_katagori;
     int []id_kategori;
@@ -582,7 +582,7 @@ public class FormAddNewLocationActivity extends AppCompatActivity {
                 nama_katagori = new String[menuItemArray.length()];
 
                 for (int i = 0; i < menuItemArray.length(); i++) {
-                    id_kategori[i] = menuItemArray.getJSONObject(i).getInt("id_category");
+                    id_kategori[i] = Integer.parseInt(menuItemArray.getJSONObject(i).getString("id_category"));
                     nama_katagori[i] = menuItemArray.getJSONObject(i).getString("category_name").toString();
                 }
             } catch (JSONException e) {
@@ -742,7 +742,7 @@ public class FormAddNewLocationActivity extends AppCompatActivity {
                 jsonobj.put("loc_userCreatedId", loc_userCreatedId);
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-                nameValuePairs.add(new BasicNameValuePair("dheket_new_loc", jsonobj.toString()));
+                nameValuePairs.add(new BasicNameValuePair("dheket_new_loc", jsonobj.toString())); //json with header [dheket_new_loc={"a"="a","b"=1}]
 
                 Log.e("mainToPost", "mainToPost" + nameValuePairs.toString());
 

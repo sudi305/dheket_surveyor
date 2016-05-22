@@ -76,6 +76,9 @@
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/ic_action_home" />
 
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -86,6 +89,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="5dp" />
+                </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -102,6 +106,9 @@
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/ic_action_compass" />
 
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -112,6 +119,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="5dp" />
+                </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -128,6 +136,9 @@
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/ic_action_phone_start" />
 
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -138,7 +149,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="5dp" />
-
+                </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
         </LinearLayout>
@@ -385,6 +396,9 @@
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/ic_action_tags" />
 
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -396,6 +410,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="5dp"
                     android:focusableInTouchMode="false" />
+                </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
         </LinearLayout>
@@ -448,7 +463,9 @@
                     android:layout_height="match_parent" >
 
                 </LinearLayout>
-
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -462,7 +479,7 @@
                     android:inputType="textLongMessage|textMultiLine"
                     android:focusableInTouchMode="false"
                     android:singleLine="false" />
-
+                </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 
             <ImageView
@@ -520,20 +537,25 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent" >
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:id="@+id/editText_anl_loc_description"
+                        android:hint="Description"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:inputType="textMultiLine" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:id="@+id/editText_anl_loc_description"
-                    android:hint="Description"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1"
-                    android:inputType="textMultiLine" />
             </LinearLayout>
 
         </LinearLayout>
